@@ -1,65 +1,92 @@
 import '../login/Login.css';
 import React from 'react';
 
-
 class Login extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {name: "", password: "!!!"};
+      this.state = {name: "klipach@mail.ru", password: "11111111", btken: false, result_login: ""};
  
       this.onChange = this.onChange.bind(this);
       this.onChangePwd = this.onChangePwd.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
+
     }
-    
-    
+
     onChange(e) {
-      var val = e.target.value;
+      const val = e.target.value;
       this.setState({name: val});
    }
 
    onChangePwd(e) {
-    var val = e.target.value;
+    const val = e.target.value;
     this.setState({password: val});
  }
 
-    handleSubmit(e) {
-      e.preventDefault();
-      alert("Имя: " + this.state.name + "Пароль: "+ this.state.password);
+
+    handleSubmit(e){
+        e.preventDefault()
+       // const input = {phone_or_mail: this.state.name, password: this.state.password, device: ""};
+        //alert('A form was submitted: ' + JSON.stringify(input));
+
+        const data = new FormData();
+        data.append('phone_or_mail', this.state.name);
+        data.append('password', this.state.password);
+        data.append('device', '' );
+        for (const [k,v] of data) {console.log(k,v)}
+
+        fetch('https://api.iq.academy/api/account/login', {
+            method: "POST",
+            body: data
+         }).then(res => res.json())
+         .then(
+             (response) => {
+                    this.setState({result_login: JSON.stringify(response)});
+                    this.setState({btken : !this.state.btken});
+                    console.log(this.state.result_login);
+                    // <Route path="/account" component={Account} />
+
+             }
+         ).catch(error => console.error('Error:', error));
+    }    
+
+
+    back() {
+        this.setState({btken : !this.state.btken});
     }
- 
+   
     render() {
-      return (
-          <form onSubmit={this.handleSubmit}>
-              <p>
-                  <label>Имя:</label><br />
-                  <input type="text" value={this.state.name} onChange={this.onChange}/>
-              </p>
 
-              <p>
-                  <label>Пароль:</label><br />
-                  <input type="text" value={this.state.password} onChange={this.onChangePwd}/>
-              </p>
+        if (!this.state.btken) {
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <p>
+                        <label>Имя:</label><br />
+                        <input name="phone_or_mail" type="text" value={this.state.name} onChange={this.onChange}/>
+                    </p>
 
-              <input type="submit" value="Отправить" />
-          </form>
-      );
+                    <p>
+                        <label>Пароль:</label><br />
+                        <input name="password" type="text" value={this.state.password} onChange={this.onChangePwd}/>
+                    </p>
+
+                    <input type="submit" name="Отправить" />
+                </form>
+            );
+        }
+
+        if (this.state.btken) {
+            return (
+                <form>
+                        <p>Результат:</p>
+                        <p>{this.state.result_login}</p>
+                        <p><button click="back()">Назад</button></p>
+                </form>                
+           );
+        }
+
     }
   }
 
-/*
-function Login() {
-    return (
-        <form onSubmit={this.handleSubmit}>
-        <p>
-            <label>Имя:</label><br />
-            <input type="text" value={this.state.name} onChange={this.onChange}/>
-        </p>
-        <input type="submit" value="Отправить" />
-    </form>
-    );
-  }  
-*/
 
   export default Login;
   

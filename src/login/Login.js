@@ -12,6 +12,7 @@ class Login extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
     }
     
+    
     onChange(e) {
       var val = e.target.value;
       this.setState({name: val});

@@ -1,266 +1,182 @@
-/*
-@font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat'), url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
-}
-*/
-* {
-    color: #E1D3C1;
-}
-body {
-    font-family: Montserrat;
-    background-size: cover;
-    background-image: url(Background.png);
-    background-color: rgba(34, 34, 34, 0.7);
-}
-.login__form {
-    font-family: Montserrat;
-    position: relative;
-    margin-top: calc((50% - 465px)/2);
-    margin-left: calc(50% - 540px/2);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 540px;
-    height: 465px;
-    background: rgba(34, 34, 34, 0.7);
-    border-radius: 20px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 22px;
-}
-.login__form__title {
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 41px;
-    text-align: center;
-    padding: 30px 0;
-}
-.login__form__input {
-    font-family: Montserrat;
-    width: 500px;
-    height: 52px;
-    margin: 0 auto;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 18px;
-    line-height: 22px;
-    background: inherit;
-    border: none;
-    border-bottom: 2px solid #4F3F84;
-    margin-bottom: 30px;
-    outline:none;
-}
-.login__form__input:focus {
-    background: inherit;
-    border-bottom: 2px solid #E1D3C1;
-}
+@media screen and (min-width: 1320px) and (max-width: 3999.98px) {
 
-.login__submit__button:focus {
-    background-color: #504D49;
-    border-color: rgba(34, 34, 34, 0.7);
-}
-::-webkit-input-placeholder {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;padding:30px 0;}
-::-moz-placeholder          {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;}/* Firefox 19+ */
-:-moz-placeholder           {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;}/* Firefox 18- */
-:-ms-input-placeholder      {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;}
+    /*
+    @font-face {
+        font-family: 'Montserrat';
+        src: local('Montserrat'), url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
+    }
+    */
+    * {
+        color: #E1D3C1;
+    }
 
-:focus::-webkit-input-placeholder {position:relative;top:-20px;font-size:0.8em;line-height: 3em;background: rgba(87, 85, 85, 0.7);}
-:focus::-moz-placeholder          {height: 85px;font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:focus:-moz-placeholder           {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:focus:-ms-input-placeholder      {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
+    body {
+        font-family: Montserrat;
+        background-size: cover;
+        background-image: url(Background.png);
+        background-color: rgba(34, 34, 34, 0.7);
+    }
 
+    .login__form {
+        font-family: Montserrat;
+        position: relative;
+        margin-top: calc((50% - 465px) / 2);
+        margin-left: calc(50% - 540px / 2);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 540px;
+        height: 465px;
+        background-color: rgba(34, 34, 34, 0.7);
+        border-radius: 20px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 22px;
+    }
 
+    .login__form__title {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 41px;
+        text-align: center;
+        padding: 30px 0;
+    }
 
+    .login__form__input {
+        font-family: Montserrat;
+        width: 500px;
+        height: 52px;
+        margin: 0 auto;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 22px;
+        background-color: inherit;
+        border: none;
+        border-bottom: 2px solid #4F3F84;
+        margin-bottom: 30px;
+        outline: none;
+    }
 
-.login__submit__button, button {
-    font-family: Montserrat;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 22px;
-    width: 430px;
-    height: 72px;
-    margin: 0 auto;
-    margin-bottom: 32px;
-    background: #4F3F84;
-    border-color: #4F3F84;
-    border-radius: 15px;
-    color: inherit;
-    cursor: pointer;
-    outline:none;
-}
-.login__submit__button:hover {
-    background-color: #5C34FA;
-    border: #5C34FA;
-}
-.login__submit__button:focus {
-    background-color: #504D49;
-    border-color: #504D49;
-}
-.login__questions {
-    font-family: Montserrat;
-    display: flex;
-    justify-content: center;
-}
-.login__register {
-    text-decoration: underline;
-    padding-left: 4px;
-}
-.login__register:hover {
-    cursor: pointer;
-}
+    .login__form__input:focus {
+        background-color: inherit;
+        border-bottom: 2px solid #E1D3C1;
+    }
 
+    ::-webkit-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+        padding: 30px 0;
+    }
 
+    ::-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
 
-/*
-Клипач, добавил микроклассы
- */
-.red_bottom {
-    border-bottom: 2px solid #F2512D;
-}
+    /* Firefox 19+ */
+    :-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
 
-.green_bottom {
-    border-bottom: 2px solid #57B535;
-}
+    /* Firefox 18- */
+    :-ms-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
 
-.app_background {
-     background-color: rgba(87, 85, 85, 0.7);
- }
+    :focus::-webkit-input-placeholder {
+        position: relative;
+        top: -20px;
+        font-size: 0.8em;
+        line-height: 3em;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
 
+    :focus::-moz-placeholder {
+        height: 85px;
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
 
+    :focus:-moz-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
 
-/*
+    :focus:-ms-input-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
 
+    .login__submit__button, button {
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        width: 430px;
+        height: 72px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        background-color: #4F3F84;
+        border-color: #4F3F84;
+        border-radius: 15px;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+    }
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: rgba(34, 34, 34, 0.7);
+    }
+    .login__submit__button:hover {
+        background-color: #5C34FA;
+        border: #5C34FA;
+    }
 
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: #504D49;
+    }
 
-#F2512D  Красный
-#57B535  Зеленый
+    .login__questions {
+        font-family: Montserrat;
+        display: flex;
+        justify-content: center;
+    }
 
+    .login__register {
+        text-decoration: underline;
+        padding-left: 4px;
+    }
 
+    .login__register:hover {
+        cursor: pointer;
+    }
 
-:checked::-webkit-input-placeholder {position:relative;top:-20px;font-size:11px;line-height: 3em;background: rgba(87, 85, 85, 0.7);}
-:checked::-moz-placeholder          {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:checked:-moz-placeholder           {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:checked:-ms-input-placeholder      {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
+    /*
+    Клипач, добавил микроклассы
+     */
+    .red_bottom {
+        border-bottom: 2px solid #F2512D;
+    }
 
-*/
+    .green_bottom {
+        border-bottom: 2px solid #57B535;
+    }
 
-@media screen and (min-width: 320px) and (max-width: 727.98px) {}
+    .app_background {
+        background-color: rgba(87, 85, 85, 0.7);
+    }
 
-/*
-@font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat'), url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
-}
-*/
-* {
-    color: #E1D3C1;
-}
-body {
-    font-family: Montserrat;
-    background-size: cover;
-    background-image: url(Background.png);
-    background-color: rgba(34, 34, 34, 0.7);
-}
-.login__form {
-    font-family: Montserrat;
-    position: relative;
-    margin-top: calc((50% - 465px)/2);
-    margin-left: calc(50% - 540px/2);
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 540px;
-    height: 465px;
-    background: rgba(34, 34, 34, 0.7);
-    border-radius: 20px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 22px;
-}
-.login__form__title {
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: 41px;
-    text-align: center;
-    padding: 30px 0;
-}
-.login__form__input {
-    font-family: Montserrat;
-    width: 500px;
-    height: 52px;
-    margin: 0 auto;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 18px;
-    line-height: 22px;
-    background: inherit;
-    border: none;
-    border-bottom: 2px solid #4F3F84;
-    margin-bottom: 30px;
-    outline:none;
-}
-.login__form__input:focus {
-    background: inherit;
-    border-bottom: 2px solid #E1D3C1;
-}
-
-.login__submit__button:focus {
-    background-color: #504D49;
-    border-color: rgba(34, 34, 34, 0.7);
-}
-::-webkit-input-placeholder {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;padding:30px 0;}
-::-moz-placeholder          {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;}/* Firefox 19+ */
-:-moz-placeholder           {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;}/* Firefox 18- */
-:-ms-input-placeholder      {background: rgba(87, 85, 85, 0.7);color:#E1D3C1;}
-
-:focus::-webkit-input-placeholder {position:relative;top:-20px;font-size:0.8em;line-height: 3em;background: rgba(87, 85, 85, 0.7);}
-:focus::-moz-placeholder          {height: 85px;font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:focus:-moz-placeholder           {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:focus:-ms-input-placeholder      {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-
-
-
-
-.login__submit__button, button {
-    font-family: Montserrat;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 22px;
-    width: 430px;
-    height: 72px;
-    margin: 0 auto;
-    margin-bottom: 32px;
-    background: #4F3F84;
-    border-color: #4F3F84;
-    border-radius: 15px;
-    color: inherit;
-    cursor: pointer;
-    outline:none;
-}
-.login__submit__button:hover {
-    background-color: #5C34FA;
-    border: #5C34FA;
-}
-.login__submit__button:focus {
-    background-color: #504D49;
-    border-color: #504D49;
-}
-.login__questions {
-    font-family: Montserrat;
-    display: flex;
-    justify-content: center;
-}
-.login__register {
-    text-decoration: underline;
-    padding-left: 4px;
-}
-.login__register:hover {
-    cursor: pointer;
 }
 
 /*
@@ -270,14 +186,187 @@ body {
 #F2512D  Красный
 #57B535  Зеленый
 
+ background-image: url(Background-mobile.png);
 
-
-:checked::-webkit-input-placeholder {position:relative;top:-20px;font-size:11px;line-height: 3em;background: rgba(87, 85, 85, 0.7);}
-:checked::-moz-placeholder          {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:checked:-moz-placeholder           {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
-:checked:-ms-input-placeholder      {font-size:0.8em; line-height: 1;background: rgba(87, 85, 85, 0.7);}
+:checked::-webkit-input-placeholder {position:relative;top:-20px;font-size:11px;line-height: 3em;background-color: rgba(87, 85, 85, 0.7);}
+:checked::-moz-placeholder          {font-size:0.8em; line-height: 1;background-color: rgba(87, 85, 85, 0.7);}
+:checked:-moz-placeholder           {font-size:0.8em; line-height: 1;background-color: rgba(87, 85, 85, 0.7);}
+:checked:-ms-input-placeholder      {font-size:0.8em; line-height: 1;background-color: rgba(87, 85, 85, 0.7);}
 
 */
 
-@media screen and (min-width: 320px) and (max-width: 727.98px) {}
+@media screen and (min-width: 320px) and (max-width: 479.98px) {
+
+
+    body {
+
+        background-image: url(Background-mobile.png);
+        background-size: cover;
+        background-color: rgba(34, 34, 34, 0.7);
+        min-width: 320px;
+        color: #E1D3C1;
+    }
+    .login__form {
+        font-family: Montserrat;
+        position: relative;
+        margin-top: 30%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 22px;
+    }
+
+    .login__form__title {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 41px;
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    .login__form__input {
+        font-family: Montserrat;
+        width: 100%;
+        height: auto;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 22px;
+        background-color: inherit;
+        border: none;
+        border-bottom: 2px solid #4F3F84;
+        margin-bottom: 30px;
+        outline: none;
+    }
+
+    .login__form__input:focus {
+        background-color: inherit;
+        border-bottom: 2px solid #E1D3C1;
+    }
+
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: rgba(34, 34, 34, 0.7);
+    }
+
+    ::-webkit-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+        padding: 30px 0;
+    }
+
+    ::-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 19+ */
+    :-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 18- */
+    :-ms-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    :focus::-webkit-input-placeholder {
+        position: relative;
+        top: -20px;
+        font-size: 0.8em;
+        line-height: 3em;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus::-moz-placeholder {
+        height: 85px;
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-moz-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-ms-input-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    .login__submit__button, button {
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        width: 370px;
+        height: 72px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        background-color: #4F3F84;
+        border-color: #4F3F84;
+        border-radius: 15px;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+    }
+
+    button {
+        position: absolute;
+    }
+
+    .login__submit__button:hover {
+        background-color: #5C34FA;
+        border: #5C34FA;
+    }
+
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: #504D49;
+    }
+
+    .login__questions {
+        font-family: Montserrat;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login__register {
+        text-decoration: underline;
+        padding-left: 4px;
+    }
+
+    .login__register:hover {
+        cursor: pointer;
+    }
+
+    /*
+    Клипач, добавил микроклассы
+     */
+    .red_bottom {
+        border-bottom: 2px solid #F2512D;
+    }
+
+    .green_bottom {
+        border-bottom: 2px solid #57B535;
+    }
+
+    .app_background {
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+}
+
 

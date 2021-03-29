@@ -25,9 +25,9 @@ class Login extends React.Component {
                     console.log('добавили app_background');
                 }
 
+                //elem.style.cssText = ".app_background2 { background-color: rgba(87, 85, 85, 0.7); }";
                 //elem.style.cssText = 'border-bottom: 2px solid '+ color;
                // elem.style.cssText = 'background-color: rgba(87, 85, 85, 0.7';
-
             }
     }
 

@@ -4,7 +4,7 @@ import React from 'react';
 class Login extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {name: "klipach@mail.ru", password: "11111111", btken: false, result_login: ""};
+      this.state = {name: "", password: "", btken: false, result_login: ""};
  
       this.onChange = this.onChange.bind(this);
       this.onChangePwd = this.onChangePwd.bind(this);
@@ -58,19 +58,26 @@ class Login extends React.Component {
 
         if (!this.state.btken) {
             return (
-                <form onSubmit={this.handleSubmit}>
-                    <p>
-                        <label>Имя:</label><br />
-                        <input name="phone_or_mail" type="text" value={this.state.name} onChange={this.onChange}/>
-                    </p>
+                <form onSubmit={this.handleSubmit} className={'login__form'}>
+                    <span className={'login__form__title'}>Вход</span>
 
-                    <p>
-                        <label>Пароль:</label><br />
-                        <input name="password" type="text" value={this.state.password} onChange={this.onChangePwd}/>
-                    </p>
 
-                    <input type="submit" name="Отправить" />
+                    <input type="text" value={this.state.name} onChange={this.onChange} placeholder={'Email или телефон'} className={'login__form__input'}/>
+
+
+                    <input type="text" value={this.state.password} onChange={this.onChangePwd} placeholder={'Пароль'} className={'login__form__input'}/>
+
+
+                    <input type="submit" value="Отправить" className={'login__submit__button'}/>
+
+                    <div className={'login__questions'}>
+                        <span className={'login__no-login'}>Нет аккаунта?</span>
+                        <span className={'login__register'}>Регистрация</span>
+                    </div>
+
                 </form>
+
+
             );
         }
 
@@ -79,7 +86,7 @@ class Login extends React.Component {
                 <form>
                         <p>Результат:</p>
                         <p>{this.state.result_login}</p>
-                        <p><button click="back()">Назад</button></p>
+                        <button click="back()">Назад</button>
                 </form>                
            );
         }

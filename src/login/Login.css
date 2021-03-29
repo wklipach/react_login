@@ -58,6 +58,7 @@ body {
     border-bottom: 2px solid #4F3F84;
     margin-bottom: 26px;
 }
+
 .login__form__input:focus {
     border-bottom: 2px solid #E1D3C1;
 }

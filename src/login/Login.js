@@ -1,6 +1,7 @@
 import '../login/Login.css';
 import React from 'react';
-import logo from '../image/logo.png';
+import logo from '../image/logo.png';  
+
 
 class Login extends React.Component {
     constructor(props) {
@@ -194,8 +195,10 @@ class Login extends React.Component {
                if (!this.state.btken) {
                     return (
                         <div>
-                            <img src= {logo} alt='' className={'logo'}/>
-
+                            
+                          <div className={'logo2'} >
+                              <img src= {logo} alt='' className={'logo2'}/>
+                           </div>
 
 
 

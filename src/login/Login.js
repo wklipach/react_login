@@ -22,7 +22,6 @@ class Login extends React.Component {
     this.setState({password: val});
  }
 
-
     handleSubmit(e){
         e.preventDefault()
        // const input = {phone_or_mail: this.state.name, password: this.state.password, device: ""};

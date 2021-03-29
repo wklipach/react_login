@@ -162,20 +162,6 @@
         cursor: pointer;
     }
 
-    /*
-    Клипач, добавил микроклассы
-     */
-    .red_bottom {
-        border-bottom: 2px solid #F2512D;
-    }
-
-    .green_bottom {
-        border-bottom: 2px solid #57B535;
-    }
-
-    .app_background {
-        background-color: rgba(87, 85, 85, 0.7);
-    }
 
 }
 

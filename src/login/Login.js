@@ -19,9 +19,14 @@ class Login extends React.Component {
     setColorNameValidation(color) {
             let elem = document.getElementById('name');
             if (elem) {
-                elem.style.cssText = 'border-bottom: 2px solid '+ color;
 
-                // elem.style.cssText = 'background-color: rgba(87, 85, 85, 0.7';
+                if (!elem.classList.contains('app_background')) {
+                    elem.classList.add('app_background');
+                    console.log('добавили app_background');
+                }
+
+                //elem.style.cssText = 'border-bottom: 2px solid '+ color;
+               // elem.style.cssText = 'background-color: rgba(87, 85, 85, 0.7';
 
             }
     }

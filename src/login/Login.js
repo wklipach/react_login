@@ -6,10 +6,10 @@ class Login extends React.Component {
       super(props);
       this.state = {name: "", password: "", btken: false, result_login: "", errors: {name: 'ввода не было'}, errors_pwd: {name: 'ввода не было'}};
 
-      this.onFocusName = this.onFocusName.bind(this);
-      this.onFocusPassword = this.onFocusPassword.bind(this);
-      this.onBlurName = this.onBlurName.bind(this);
-      this.onBlurPassword = this.onBlurPassword.bind(this);
+      //this.onFocusName = this.onFocusName.bind(this);
+      //this.onFocusPassword = this.onFocusPassword.bind(this);
+      //this.onBlurName = this.onBlurName.bind(this);
+      //this.onBlurPassword = this.onBlurPassword.bind(this);
       this.onChange = this.onChange.bind(this);
       this.onChangePwd = this.onChangePwd.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -192,14 +192,15 @@ class Login extends React.Component {
                         <form onSubmit={this.handleSubmit} className={'login__form'}>
                             <span className={'login__form__title'}>Вход</span>
 
-                            <input type="text" id="name" value={this.state.name} onFocus={this.onFocusName}
-                                                                                 onBlur={this.onBlurName}
+                            <input type="text" id="name" value={this.state.name}
+                                                                                // onFocus={this.onFocusName}
+                                                                                // onBlur={this.onBlurName}
                                                                                  onChange={this.onChange}
                                     placeholder={'Email или телефон'} className={'login__form__input'}/>
 
                             <input type="text" id="password" value={this.state.password}
-                                                                                  onFocus={this.onFocusPassword}
-                                                                                  onBlur = {this.onBlurPassword}
+                                                                                  //onFocus={this.onFocusPassword}
+                                                                                  //onBlur = {this.onBlurPassword}
                                                                                   onChange={this.onChangePwd}
                                    placeholder={'Пароль'} className={'login__form__input'}/>
 

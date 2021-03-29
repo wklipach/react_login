@@ -194,7 +194,11 @@ class Login extends React.Component {
                if (!this.state.btken) {
                     return (
                         <div>
-                        <img alt='' src= {logo} />
+                            <img src= {logo} alt='' className={'logo'}/>
+
+
+
+
                         <form onSubmit={this.handleSubmit} className={'login__form'}>
                             <span className={'login__form__title'}>Вход</span>
 
@@ -217,7 +221,7 @@ class Login extends React.Component {
                                 <span className={'login__register'}>Регистрация</span>
                             </div>
                         </form>
-                        </div>
+               </div>
 
 
                     );

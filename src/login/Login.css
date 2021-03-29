@@ -11,22 +11,29 @@
     }
 
     body {
+
         font-family: Montserrat;
         background-size: cover;
         background-image: url(Background.png);
         background-color: rgba(34, 34, 34, 0.7);
     }
-
+    .logo {
+        display: flex;
+        text-align: center;
+         width: 537px ;
+        height: 130px;
+        margin: 3.4em auto 0 auto;
+    }
     .login__form {
         font-family: Montserrat;
-        position: relative;
-        margin-top: calc((50% - 465px) / 2);
+        position: absolute;
+        margin-top: 6em;
         margin-left: calc(50% - 540px / 2);
         display: flex;
         flex-direction: column;
         text-align: center;
-        width: 540px;
-        height: 465px;
+        width: 28.4%;
+        height: 26em;
         background-color: rgba(34, 34, 34, 0.7);
         border-radius: 20px;
         font-size: 18px;
@@ -162,6 +169,20 @@
         cursor: pointer;
     }
 
+    /*
+    Клипач, добавил микроклассы
+     */
+    .red_bottom {
+        border-bottom: 2px solid #F2512D;
+    }
+
+    .green_bottom {
+        border-bottom: 2px solid #57B535;
+    }
+
+    .app_background {
+        background-color: rgba(87, 85, 85, 0.7);
+    }
 
 }
 
@@ -172,6 +193,7 @@
 #F2512D  Красный
 #57B535  Зеленый
 
+  <img src= {logo} alt='' className={'logo'}/>
  background-image: url(Background-mobile.png);
 
 :checked::-webkit-input-placeholder {position:relative;top:-20px;font-size:11px;line-height: 3em;background-color: rgba(87, 85, 85, 0.7);}
@@ -188,9 +210,16 @@
 
         background-image: url(Background-mobile.png);
         background-size: cover;
-        background-color: rgba(34, 34, 34, 0.7);
+        background-color: rgba(34, 34, 34, 0.9);
         min-width: 320px;
         color: #E1D3C1;
+    }
+    .logo {
+        display: flex;
+        text-align: center;
+        width: 237px ;
+        height: 60px;
+        margin: 3.4em auto 0 auto;
     }
     .login__form {
         font-family: Montserrat;
@@ -218,7 +247,7 @@
     .login__form__input {
         font-family: Montserrat;
         width: 100%;
-        height: auto;
+        height: 3em;
         font-style: normal;
         font-weight: 200;
         font-size: 18px;
@@ -297,7 +326,7 @@
         font-weight: 300;
         font-size: 18px;
         line-height: 22px;
-        width: 370px;
+        width: 300px;
         height: 72px;
         margin: 0 auto;
         margin-bottom: 32px;
@@ -338,20 +367,6 @@
         cursor: pointer;
     }
 
-    /*
-    Клипач, добавил микроклассы
-     */
-    .red_bottom {
-        border-bottom: 2px solid #F2512D;
-    }
-
-    .green_bottom {
-        border-bottom: 2px solid #57B535;
-    }
-
-    .app_background {
-        background-color: rgba(87, 85, 85, 0.7);
-    }
 
 }
 

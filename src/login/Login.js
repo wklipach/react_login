@@ -20,6 +20,9 @@ class Login extends React.Component {
             let elem = document.getElementById('name');
             if (elem) {
                 elem.style.cssText = 'border-bottom: 2px solid '+ color;
+
+                // elem.style.cssText = 'background-color: rgba(87, 85, 85, 0.7';
+
             }
     }
 
@@ -39,7 +42,7 @@ class Login extends React.Component {
         //Name
         if(!fields["name"]){
             errors["name"] = "Введите телефон или почтовый адрес";
-            this.setColorNameValidation('#cf000f');
+            this.setColorNameValidation('#F2512D');
             return false;
         }
 
@@ -49,7 +52,7 @@ class Login extends React.Component {
         if (sMailOrPhone.length === 0) {
             errors["name"] = "Введите телефон или почтовый адрес";
             this.setState({errors: errors});
-            this.setColorNameValidation('#cf000f');
+            this.setColorNameValidation('#F2512D');
             return false;
         }
 
@@ -58,7 +61,7 @@ class Login extends React.Component {
             errors["name"] = "Введены только буквы";
             this.setState({errors: errors});
             console.log('Введены только буквы');
-            this.setColorNameValidation('#cf000f');
+            this.setColorNameValidation('#F2512D');
             return false;
         }
 
@@ -66,7 +69,7 @@ class Login extends React.Component {
         const re = /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if ( re.test(sMailOrPhone)) {
             console.log('Это почта');
-            this.setColorNameValidation('#32CD32');
+            this.setColorNameValidation('#57B535');
             return true;
         }
 
@@ -75,7 +78,7 @@ class Login extends React.Component {
         // условность - если нет букв считаем что это телефон
         if (!(/[a-zа-яё]/i.test(sMailOrPhone))){
             console.log('Это телефон');
-            this.setColorNameValidation('#32CD32');
+            this.setColorNameValidation('#57B535');
             return true;
         }
 
@@ -102,19 +105,19 @@ class Login extends React.Component {
         if (!fields["password"]) {
             errors_pwd["password"] = "Введите пароль";
             this.setState({errors_pwd: errors_pwd});
-            this.setColorPasswordValidation('#cf000f');
+            this.setColorPasswordValidation('#F2512D');
             return false;
         }
 
         if (fields["password"].length < 3 ) {
             errors_pwd["password"] = "Введите пароль более двух символов";
             this.setState({errors_pwd: errors_pwd});
-            this.setColorPasswordValidation('#cf000f');
+            this.setColorPasswordValidation('#F2512D');
             return false;
         }
 
         // если все хорошо
-        this.setColorPasswordValidation('#32CD32');
+        this.setColorPasswordValidation('#57B535');
         return true;
     }
 
@@ -138,13 +141,13 @@ class Login extends React.Component {
 
         if (Object.keys(this.state.errors).length !== 0) {
             console.log('красим красную полоску в телефоне!');
-            this.setColorNameValidation('#cf000f');
+            this.setColorNameValidation('#F2512D');
             return;
         }
 
         if (Object.keys(this.state.errors_pwd).length !== 0) {
             console.log('красим красную полоску в пароле!');
-            this.setColorPasswordValidation('#cf000f');
+            this.setColorPasswordValidation('#F2512D');
             return;
         }
 

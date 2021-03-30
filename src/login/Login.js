@@ -8,8 +8,13 @@ import arrreg from '../image/arrow-down.svg';
 class Login extends React.Component {
     constructor(props) {
       super(props);
+
+      // возможные состояния: 
+      // name - почта, password - пароль, btken - признак полученного ответа, 
+      // result_login - полученный ответ, errors - ошибки ввода почты, errors_pwd - ошибки ввода пароля
       this.state = {name: "", password: "", btken: false, result_login: "", errors: {name: 'ввода не было'}, errors_pwd: {name: 'ввода не было'}};
 
+      // связываем все события с текущим контентом
       this.onFocusName = this.onFocusName.bind(this);
       this.onFocusPassword = this.onFocusPassword.bind(this);
       this.onBlurName = this.onBlurName.bind(this);
@@ -20,24 +25,16 @@ class Login extends React.Component {
     }
 
 
+    // одкрашивание поля "телефон+почта" - нижний бордер инпута в другой цвет  
     setColorNameValidation(color) {
-     /*
             let elem = document.getElementById('name');
             if (elem) {
-
-                if (!elem.classList.contains('app_background')) {
-                    elem.classList.add('app_background');
-                    console.log('добавили app_background');
-                }
-
-                elem.style.cssText = ".app_background2 { background-color: rgba(87, 85, 85, 0.7); }";
                 elem.style.cssText = 'border-bottom: 2px solid '+ color;
-                elem.style.cssText = 'background-color: rgba(87, 85, 85, 0.7';
             }
-     */
            return true;
      }
 
+    // подкрашивание пароля - нижний бордер инпута в другой цвет 
     setColorPasswordValidation(color) {
             let elem = document.getElementById('password');
             if (elem) {
@@ -45,22 +42,25 @@ class Login extends React.Component {
             }
     }
 
+    // валидация покидания поля телефон+почта 
     handleValidation(){
 
+        // пишем пустой объект для ошибок
         let fields = this.state;
         let errors = {};
         this.setState({errors: errors});
 
-        //Name
+        //при пустом поле красим поле в красный и выходим
         if(!fields["name"]){
             errors["name"] = "Введите телефон или почтовый адрес";
             this.setColorNameValidation('#F2512D');
             return false;
         }
 
+        //убиваем пробелы
         const sMailOrPhone = fields["name"].toString().trim();
 
-        // теперь с убранными пробелами
+        // теперь с убранными пробелами, при пустом поле красим поле в красный и выходим
         if (sMailOrPhone.length === 0) {
             errors["name"] = "Введите телефон или почтовый адрес";
             this.setState({errors: errors});
@@ -68,52 +68,53 @@ class Login extends React.Component {
             return false;
         }
 
-        // не телефон и не почта
+        // проверяем наличие только букв  - если так то это не телефон и не почта
         if(fields["name"].match(/^[a-zA-Z]+$/)) {
             errors["name"] = "Введены только буквы";
             this.setState({errors: errors});
-            console.log('Введены только буквы');
             this.setColorNameValidation('#F2512D');
             return false;
         }
 
-        //есть почта
+        //почтовая маска, если это почта красим в зеленый и выходим
         const re = /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if ( re.test(sMailOrPhone)) {
-            console.log('Это почта');
             this.setColorNameValidation('#57B535');
             return true;
         }
 
-        console.log('Это не почта');
-
-        // условность - если нет букв считаем что это телефон
+        // условность - если нет букв считаем что это телефон и подкрышиваем в зеленый
         if (!(/[a-zа-яё]/i.test(sMailOrPhone))){
-            console.log('Это телефон');
             this.setColorNameValidation('#57B535');
             return true;
         }
 
-        console.log('Почта или телефон непонятны');
-        errors["name"] = 'Почта или телефон непонятны';
+        // если не проходит проверок как почта или телефон считаем ввод неопределенным
+        errors["name"] = 'Неопределенный ввод';
         this.setState({errors: errors});
         return false;
     }
 
+    //запоминаем введенное поле
     onChange(e) {
       const val = e.target.value;
       this.setState({name: val});
    }
 
+   // функция события покидания input почты_телефона
     onBlurName(e) {
         this.handleValidation();
     }
 
+    // событие покидания элемента с паролем
     onBlurPassword(e) {
         let fields = this.state;
         let errors_pwd = {};
+
+        // пишем пустой объект "ошибки в пароле"
         this.setState({errors_pwd: errors_pwd});
 
+        // пароль пустой, красим в красный
         if (!fields["password"]) {
             errors_pwd["password"] = "Введите пароль";
             this.setState({errors_pwd: errors_pwd});
@@ -121,6 +122,7 @@ class Login extends React.Component {
             return false;
         }
 
+        // пароль не менее 3 элементов, красим в красный
         if (fields["password"].length < 3 ) {
             errors_pwd["password"] = "Введите пароль более двух символов";
             this.setState({errors_pwd: errors_pwd});
@@ -128,15 +130,17 @@ class Login extends React.Component {
             return false;
         }
 
-        // если все хорошо
+        // епри отсутствии ошибок красим пароль в зеленый
         this.setColorPasswordValidation('#57B535');
         return true;
     }
 
+    // при фокусе нейтральное серое подкрашивание в нижней полоске input Name
     onFocusName(e) {
         this.setColorNameValidation('#E1D3C1');
     }
 
+    // при фокусе нейтральное серое подкрашивание в нижней полоске input password
     onFocusPassword(e) {
         this.setColorPasswordValidation('#E1D3C1');
     }
@@ -151,27 +155,29 @@ class Login extends React.Component {
     handleSubmit(e){
         e.preventDefault()
 
+        // если есть объект с ошибкой подкрашиваем красным имя
         if (Object.keys(this.state.errors).length !== 0) {
-            console.log('красим красную полоску в телефоне!');
             this.setColorNameValidation('#F2512D');
             return;
         }
 
+        // если есть объект с ошибкой подкрашиваем красным пароль
         if (Object.keys(this.state.errors_pwd).length !== 0) {
-            console.log('красим красную полоску в пароле!');
             this.setColorPasswordValidation('#F2512D');
             return;
         }
 
-
-
-
+        // создаем объект форм-даты для отсылки 
         const data = new FormData();
         data.append('phone_or_mail', this.state.name);
         data.append('password', this.state.password);
         data.append('device', '' );
-        for (const [k,v] of data) {console.log(k,v)}
-
+        
+        // тестовое - проверка отылаемых объектов (внимание- без перебора не показывает содержимое)
+        // for (const [k,v] of data) {console.log(k,v)}
+        
+        // отсылаем запрос на аутентиыикацию, при получении ответа 
+        //при получении устанавливаем флагbtken + пишем ответ в result_login
         fetch('https://api.iq.academy/api/account/login', {
             method: "POST",
             body: data
@@ -180,20 +186,21 @@ class Login extends React.Component {
              (response) => {
                     this.setState({result_login: JSON.stringify(response)});
                     this.setState({btken : !this.state.btken});
-                    console.log(this.state.result_login);
-                    // <Route path="/account" component={Account} />
-
              }
          ).catch(error => console.error('Error:', error));
     }    
 
 
+    // возврат назад - меняем флаг и подгружаем первую страницу
     back() {
         this.setState({btken : !this.state.btken});
     }
-   
+
+    
+    // в рендере 2 страницы - первая логин, вторая с ответом. Выбираются через флаг btken (false, true) 
     render() {
 
+              // если не установлен флаг ответа, предлагаем аутентификацию
                if (!this.state.btken) {
                     return (
                         <div>
@@ -232,15 +239,13 @@ class Login extends React.Component {
 
                             </div>
 
-
-
                         </form>
                </div>
-
 
                     );
                 }
 
+                // если установлен флаг ответа, пишем на пустую страницу ответ 
                 if (this.state.btken) {
                     return (
                         <form>
@@ -250,11 +255,9 @@ class Login extends React.Component {
                         </form>
                    );
                 }
-
             }
 
   }
-
 
   export default Login;
   

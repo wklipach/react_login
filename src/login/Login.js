@@ -3,6 +3,8 @@ import React from 'react';
 import logo from '../image/logo.png';
 import logomob from '../image/logo-mobile.png';
 import arrreg from '../image/arrow-down.svg';
+import questionimg from '../image/question.png';
+
 
 
 class Login extends React.Component {
@@ -223,9 +225,9 @@ class Login extends React.Component {
                     return (
                         <div>
                             
-                          <div className={'logotype'} >
-                              <img src= {logo} width="537" height="130" alt=''/>
-                           </div>
+
+                           <img className={'logotype'} src= {logo} alt=''/>
+
 
                             <div className={'logotype-mobile'} >
                                 <img src= {logomob} width="112" height="88" alt=''/>
@@ -247,6 +249,8 @@ class Login extends React.Component {
                                                                                   onChange={this.onChangePwd}
                                    placeholder={'Пароль'} className={'login__form__input'}/>
                             <label id="lbl_pwd" className={'login__label__pass'}>Пароль</label>
+
+                            <img className={'question-img'} src= {questionimg} width="25" height="25" alt=''/>
 
                             <input type="submit" value="Отправить" className={'login__submit__button'}/>
 

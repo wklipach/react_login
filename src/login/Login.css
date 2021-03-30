@@ -1,10 +1,14 @@
-@media screen and (min-width: 1320px) and (max-width: 3999.98px) {
+@media screen and (min-width: 1903px)  {
 
     /*
-    @font-face {
-        font-family: 'Montserrat';
-        src: local('Montserrat'), url(../fonts/Montserrat/Montserrat-Regular.ttf) format('truetype');
-    }
+   @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_aZA3g3D_u50.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
     */
     * {
         color: #E1D3C1;
@@ -17,12 +21,15 @@
         background-image: url(Background.png);
         background-color: rgba(34, 34, 34, 0.7);
     }
-    .logo2 {
+    .logotype {
         display: flex;
         text-align: center;
          width: 537px ;
         height: 130px;
         margin: 3.4em auto 0 auto;
+    }
+    .logotype-mobile {
+        display: none;
     }
     .login__form {
         font-family: Montserrat;
@@ -55,6 +62,7 @@
         font-family: Montserrat;
         width: 500px;
         height: 52px;
+        padding-left: 0.5em;
         margin: 0 auto;
         font-style: normal;
         font-weight: 200;
@@ -169,6 +177,11 @@
         cursor: pointer;
     }
 
+    .arr-reg {
+        display: none;
+    }
+
+
     /*
     Клипач, добавил микроклассы
      */
@@ -187,48 +200,45 @@
 }
 
 /*
-
-
-
 #F2512D  Красный
 #57B535  Зеленый
-
-  <img src= {logo} alt='' className={'logo'}/>
- background-image: url(Background-mobile.png);
-
-:checked::-webkit-input-placeholder {position:relative;top:-20px;font-size:11px;line-height: 3em;background-color: rgba(87, 85, 85, 0.7);}
-:checked::-moz-placeholder          {font-size:0.8em; line-height: 1;background-color: rgba(87, 85, 85, 0.7);}
-:checked:-moz-placeholder           {font-size:0.8em; line-height: 1;background-color: rgba(87, 85, 85, 0.7);}
-:checked:-ms-input-placeholder      {font-size:0.8em; line-height: 1;background-color: rgba(87, 85, 85, 0.7);}
-
 */
 
-@media screen and (min-width: 320px) and (max-width: 479.98px) {
+@media screen and (min-width: 1200px) and (max-width: 1902.98px) {
 
+    * {
+        color: #E1D3C1;
+    }
 
     body {
 
-        background-image: url(Background-mobile.png);
+        font-family: Montserrat;
         background-size: cover;
-        background-color: rgba(34, 34, 34, 0.9);
-        min-width: 320px;
-        color: #E1D3C1;
+        background-image: url(Background.png);
+        background-color: rgba(34, 34, 34, 0.7);
     }
-    .logo {
+    .logotype {
         display: flex;
         text-align: center;
-        width: 237px ;
-        height: 60px;
+        width: 537px ;
+        height: 130px;
         margin: 3.4em auto 0 auto;
+    }
+    .logotype-mobile {
+        display: none;
     }
     .login__form {
         font-family: Montserrat;
-        position: relative;
-        margin-top: 30%;
-        width: auto;
+        position: absolute;
+        margin-top: 6em;
+        margin-left: calc(50% - 540px / 2);
         display: flex;
         flex-direction: column;
         text-align: center;
+        width: 540px;
+        height: 26em;
+        background-color: rgba(34, 34, 34, 0.7);
+        border-radius: 20px;
         font-size: 18px;
         font-style: normal;
         font-weight: 200;
@@ -246,11 +256,388 @@
 
     .login__form__input {
         font-family: Montserrat;
+        width: 500px;
+        height: 52px;
+        padding-left: 0.5em;
+        margin: 0 auto;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 22px;
+        background-color: inherit;
+        border: none;
+        border-bottom: 2px solid #4F3F84;
+        margin-bottom: 30px;
+        outline: none;
+    }
+
+    .login__form__input:focus {
+        background-color: inherit;
+        border-bottom: 2px solid #E1D3C1;
+    }
+
+    ::-webkit-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+        padding: 30px 0;
+    }
+
+    ::-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 19+ */
+    :-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 18- */
+    :-ms-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    :focus::-webkit-input-placeholder {
+        position: relative;
+        top: -20px;
+        font-size: 0.8em;
+        line-height: 3em;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus::-moz-placeholder {
+        height: 85px;
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-moz-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-ms-input-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    .login__submit__button, button {
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        width: 430px;
+        height: 72px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        background-color: #4F3F84;
+        border-color: #4F3F84;
+        border-radius: 15px;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+    }
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: rgba(34, 34, 34, 0.7);
+    }
+    .login__submit__button:hover {
+        background-color: #5C34FA;
+        border: #5C34FA;
+    }
+
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: #504D49;
+    }
+
+    .login__questions {
+        font-family: Montserrat;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login__register {
+        text-decoration: underline;
+        padding-left: 4px;
+    }
+
+    .login__register:hover {
+        cursor: pointer;
+    }
+
+    .arr-reg {
+        display: none;
+    }
+
+
+    /*
+    Клипач, добавил микроклассы
+     */
+    .red_bottom {
+        border-bottom: 2px solid #F2512D;
+    }
+
+    .green_bottom {
+        border-bottom: 2px solid #57B535;
+    }
+
+    .app_background {
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+
+} /*end media 1200 - 1902 */
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+
+    * {
+        color: #E1D3C1;
+    }
+
+    body {
+
+        font-family: Montserrat;
+        background-size: cover;
+        background-image: url(Background.png);
+        background-color: rgba(34, 34, 34, 0.7);
+    }
+    .logotype {
+        display: flex;
+        text-align: center;
+        width: 537px ;
+        height: 130px;
+        margin: 3.4em auto 0 auto;
+    }
+    .logotype-mobile {
+        display: none;
+    }
+    .login__form {
+        font-family: Montserrat;
+        position: absolute;
+        margin-top: 6em;
+        margin-left: calc(50% - 540px / 2);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 540px;
+        height: 26em;
+        background-color: rgba(34, 34, 34, 0.7);
+        border-radius: 20px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 22px;
+    }
+
+    .login__form__title {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 41px;
+        text-align: center;
+        padding: 30px 0;
+    }
+
+    .login__form__input {
+        font-family: Montserrat;
+        width: 500px;
+        height: 52px;
+        padding-left: 0.5em;
+        margin: 0 auto;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 18px;
+        line-height: 22px;
+        background-color: inherit;
+        border: none;
+        border-bottom: 2px solid #4F3F84;
+        margin-bottom: 30px;
+        outline: none;
+    }
+
+    .login__form__input:focus {
+        background-color: inherit;
+        border-bottom: 2px solid #E1D3C1;
+    }
+
+    ::-webkit-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+        padding: 30px 0;
+    }
+
+    ::-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 19+ */
+    :-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 18- */
+    :-ms-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    :focus::-webkit-input-placeholder {
+        position: relative;
+        top: -20px;
+        font-size: 0.8em;
+        line-height: 3em;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus::-moz-placeholder {
+        height: 85px;
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-moz-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-ms-input-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    .login__submit__button, button {
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        width: 430px;
+        height: 72px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        background-color: #4F3F84;
+        border-color: #4F3F84;
+        border-radius: 15px;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+    }
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: rgba(34, 34, 34, 0.7);
+    }
+    .login__submit__button:hover {
+        background-color: #5C34FA;
+        border: #5C34FA;
+    }
+
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: #504D49;
+    }
+
+    .login__questions {
+        font-family: Montserrat;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login__register {
+        text-decoration: underline;
+        padding-left: 4px;
+    }
+
+    .login__register:hover {
+        cursor: pointer;
+    }
+
+    .arr-reg {
+        display: none;
+    }
+
+
+    /*
+    Клипач, добавил микроклассы
+     */
+    .red_bottom {
+        border-bottom: 2px solid #F2512D;
+    }
+
+    .green_bottom {
+        border-bottom: 2px solid #57B535;
+    }
+
+    .app_background {
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+}/*end media 992 - 1200 */
+
+@media screen and (min-width: 480px) and (max-width: 991.98px) {
+
+    body {
+        background-image: url(Background-mobile.png);
+        background-size: cover;
+        background-color: rgba(34, 34, 34, 0.9);
+        min-width: 320px;
+        color: #E1D3C1;
+    }
+    .logotype {
+        display: none;
+    }
+    .logotype-mobile {
+        display: flex;
+        text-align: center;
+        width: 112px ;
+        height: 88px;
+        margin: 4.5em auto 0 auto;
+    }
+    .login__form {
+        font-family: Montserrat;
+        position: relative;
+        margin-top: 30%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 22px;
+    }
+
+    .login__form__title {
+        font-size: 1.8em;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 41px;
+        text-align: center;
+        padding: 30px 0;
+        margin-top: -5.5em;
+    }
+
+    .login__form__input {
+        font-family: Montserrat;
         width: 100%;
         height: 3em;
         font-style: normal;
         font-weight: 200;
         font-size: 18px;
+        padding-left: 0.5em;
         line-height: 22px;
         background-color: inherit;
         border: none;
@@ -326,7 +713,8 @@
         font-weight: 300;
         font-size: 18px;
         line-height: 22px;
-        width: 300px;
+        width: 72vw;
+        max-width: 50vw;
         height: 72px;
         margin: 0 auto;
         margin-bottom: 32px;
@@ -341,33 +729,392 @@
     button {
         position: absolute;
     }
-
     .login__submit__button:hover {
         background-color: #5C34FA;
         border: #5C34FA;
     }
-
     .login__submit__button:focus {
         background-color: #504D49;
         border-color: #504D49;
     }
-
     .login__questions {
         font-family: Montserrat;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        bottom: 10px;
+        position: fixed;
+        left: calc(50% - 5em / 2);
     }
-
     .login__register {
-        text-decoration: underline;
-        padding-left: 4px;
-    }
 
+        text-decoration: none;
+
+
+    }
     .login__register:hover {
-        cursor: pointer;
+        cursor: none;
+    }
+    .login__no-login {
+        display: none;
+    }
+    .arr-reg {
+
     }
 
+} /*end media 480 - 767 */
 
-}
+
+
+@media screen and (min-width: 480px) and (max-width: 767.98px) {
+
+    body {
+        background-image: url(Background-mobile.png);
+        background-size: cover;
+        background-color: rgba(34, 34, 34, 0.9);
+        min-width: 320px;
+        color: #E1D3C1;
+    }
+    .logotype {
+        display: none;
+    }
+    .logotype-mobile {
+        display: flex;
+        text-align: center;
+        width: 112px ;
+        height: 88px;
+        margin: 4.5em auto 0 auto;
+    }
+    .login__form {
+        font-family: Montserrat;
+        position: relative;
+        margin-top: 30%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 22px;
+    }
+
+    .login__form__title {
+        font-size: 1.8em;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 41px;
+        text-align: center;
+        padding: 30px 0;
+        margin-top: -2.5em;
+    }
+
+    .login__form__input {
+        font-family: Montserrat;
+        width: 100%;
+        height: 3em;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 18px;
+        padding-left: 0.5em;
+        line-height: 22px;
+        background-color: inherit;
+        border: none;
+        border-bottom: 2px solid #4F3F84;
+        margin-bottom: 30px;
+        outline: none;
+    }
+
+    .login__form__input:focus {
+        background-color: inherit;
+        border-bottom: 2px solid #E1D3C1;
+    }
+
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: rgba(34, 34, 34, 0.7);
+    }
+
+    ::-webkit-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+        padding: 30px 0;
+    }
+
+    ::-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 19+ */
+    :-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 18- */
+    :-ms-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    :focus::-webkit-input-placeholder {
+        position: relative;
+        top: -20px;
+        font-size: 0.8em;
+        line-height: 3em;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus::-moz-placeholder {
+        height: 85px;
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-moz-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-ms-input-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    .login__submit__button, button {
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        width: 72vw;
+        max-width: 50vw;
+        height: 72px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        background-color: #4F3F84;
+        border-color: #4F3F84;
+        border-radius: 15px;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+    }
+
+    button {
+        position: absolute;
+    }
+    .login__submit__button:hover {
+        background-color: #5C34FA;
+        border: #5C34FA;
+    }
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: #504D49;
+    }
+    .login__questions {
+        font-family: Montserrat;
+        display: flex;
+        flex-direction: column;
+        bottom: 10px;
+        position: fixed;
+        left: calc(50% - 5em / 2);
+    }
+    .login__register {
+
+        text-decoration: none;
+
+
+    }
+    .login__register:hover {
+        cursor: none;
+    }
+    .login__no-login {
+        display: none;
+    }
+    .arr-reg {
+
+    }
+
+} /*end media 480 - 767 */
+
+
+@media screen and (min-width: 220px) and (max-width: 479.98px) {
+
+    body {
+        background-image: url(Background-mobile.png);
+        background-size: cover;
+        background-color: rgba(34, 34, 34, 0.9);
+        min-width: 320px;
+        color: #E1D3C1;
+    }
+    .logotype {
+        display: none;
+     }
+    .logotype-mobile {
+        display: flex;
+        text-align: center;
+        width: 112px ;
+        height: 88px;
+        margin: 4.5em auto 0 auto;
+    }
+    .login__form {
+        font-family: Montserrat;
+        position: relative;
+        margin-top: 30%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 22px;
+    }
+
+    .login__form__title {
+        font-size: 1.4em;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 41px;
+        text-align: center;
+        padding: 30px 0;
+        margin-top: -1.5em;
+    }
+
+    .login__form__input {
+        font-family: Montserrat;
+        width: 100%;
+        height: 3em;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 18px;
+        padding-left: 0.5em;
+        line-height: 22px;
+        background-color: inherit;
+        border: none;
+        border-bottom: 2px solid #4F3F84;
+        margin-bottom: 30px;
+        outline: none;
+    }
+
+    .login__form__input:focus {
+        background-color: inherit;
+        border-bottom: 2px solid #E1D3C1;
+    }
+
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: rgba(34, 34, 34, 0.7);
+    }
+
+    ::-webkit-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+        padding: 30px 0;
+    }
+
+    ::-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 19+ */
+    :-moz-placeholder {
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    /* Firefox 18- */
+    :-ms-input-placeholder {
+        position: relative;
+        background-color: rgba(87, 85, 85, 0.7);
+        color: #E1D3C1;
+    }
+
+    :focus::-webkit-input-placeholder {
+        position: relative;
+        top: -20px;
+        font-size: 0.8em;
+        line-height: 3em;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus::-moz-placeholder {
+        height: 85px;
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-moz-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    :focus:-ms-input-placeholder {
+        font-size: 0.8em;
+        line-height: 1;
+        background-color: rgba(87, 85, 85, 0.7);
+    }
+
+    .login__submit__button, button {
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        width: 72vw;
+        height: 72px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        background-color: #4F3F84;
+        border-color: #4F3F84;
+        border-radius: 15px;
+        color: inherit;
+        cursor: pointer;
+        outline: none;
+    }
+
+    button {
+        position: absolute;
+    }
+    .login__submit__button:hover {
+        background-color: #5C34FA;
+        border: #5C34FA;
+    }
+    .login__submit__button:focus {
+        background-color: #504D49;
+        border-color: #504D49;
+    }
+    .login__questions {
+        font-family: Montserrat;
+        display: flex;
+        flex-direction: column;
+        bottom: 10px;
+        position: fixed;
+        left: calc(50% - 5em / 2);
+     }
+    .login__register {
+
+        text-decoration: none;
+
+
+    }
+    .login__register:hover {
+        cursor: none;
+    }
+    .login__no-login {
+        display: none;
+    }
+    .arr-reg {
+
+    }
+
+} /*end media 320 - 479 */
 
 

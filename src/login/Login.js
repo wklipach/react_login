@@ -1,6 +1,8 @@
 import '../login/Login.css';
 import React from 'react';
-import logo from '../image/logo.png';  
+import logo from '../image/logo.png';
+import logomob from '../image/logo-mobile.png';
+import arrreg from '../image/arrow-down.svg';
 
 
 class Login extends React.Component {
@@ -196,11 +198,13 @@ class Login extends React.Component {
                     return (
                         <div>
                             
-                          <div className={'logo2'} >
-                              <img src= {logo} alt='' className={'logo2'}/>
+                          <div className={'logotype'} >
+                              <img src= {logo} width="537" height="130" alt=''/>
                            </div>
 
-
+                            <div className={'logotype-mobile'} >
+                                <img src= {logomob} width="112" height="88" alt=''/>
+                            </div>
 
                         <form onSubmit={this.handleSubmit} className={'login__form'}>
                             <span className={'login__form__title'}>Вход</span>
@@ -220,9 +224,16 @@ class Login extends React.Component {
                             <input type="submit" value="Отправить" className={'login__submit__button'}/>
 
                             <div className={'login__questions'}>
-                                <span className={'login__no-login'}>Нет аккаунта?</span>
-                                <span className={'login__register'}>Регистрация</span>
+                                <div className={'login__no-login'}>Нет аккаунта?</div>
+                                <div className={'login__register'}>Регистрация</div>
+                                <div className={'arr-reg'} >
+                                    <img src= {arrreg} alt=''/>
+                                </div>
+
                             </div>
+
+
+
                         </form>
                </div>
 

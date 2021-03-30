@@ -221,12 +221,13 @@ class Login extends React.Component {
                                                                                  onBlur={this.onBlurName}
                                                                                  onChange={this.onChange}
                                     placeholder={'Email или телефон'} className={'login__form__input'}/>
-
+                            <label className={'login__label__email'}>Email или телефон</label>
                             <input type="text" id="password" value={this.state.password}
                                                                                   onFocus={this.onFocusPassword}
                                                                                   onBlur = {this.onBlurPassword}
                                                                                   onChange={this.onChangePwd}
                                    placeholder={'Пароль'} className={'login__form__input'}/>
+                            <label className={'login__label__pass'}>Пароль</label>
 
                             <input type="submit" value="Отправить" className={'login__submit__button'}/>
 

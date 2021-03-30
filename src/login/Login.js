@@ -99,6 +99,15 @@ class Login extends React.Component {
     onChange(e) {
       const val = e.target.value;
       this.setState({name: val});
+      let elem = document.getElementById('lbl_name');
+      // если что-то введено меняем плейсхолдер на маленький сверху
+      if (elem) {
+                if (val.length > 0) {
+                        elem.style.cssText = "display: block";
+                } else {
+                        elem.style.cssText = "display: none";
+                }
+      }
    }
 
    // функция события покидания input почты_телефона
@@ -150,7 +159,16 @@ class Login extends React.Component {
     onChangePwd(e) {
     const val = e.target.value;
     this.setState({password: val});
- }
+     // если что-то введено меняем плейсхолдер на маленький сверху
+     let elem = document.getElementById('lbl_pwd');
+     if (elem) {
+           if (val.length > 0) {
+                   elem.style.cssText = "display: block";
+           } else {
+                   elem.style.cssText = "display: none";
+           }
+      }
+    }
 
     handleSubmit(e){
         e.preventDefault()
@@ -221,13 +239,14 @@ class Login extends React.Component {
                                                                                  onBlur={this.onBlurName}
                                                                                  onChange={this.onChange}
                                     placeholder={'Email или телефон'} className={'login__form__input'}/>
-                            <label className={'login__label__email'}>Email или телефон</label>
+                            <label id="lbl_name" className={'login__label__email'}>Email или телефон</label>
+
                             <input type="text" id="password" value={this.state.password}
                                                                                   onFocus={this.onFocusPassword}
                                                                                   onBlur = {this.onBlurPassword}
                                                                                   onChange={this.onChangePwd}
                                    placeholder={'Пароль'} className={'login__form__input'}/>
-                            <label className={'login__label__pass'}>Пароль</label>
+                            <label id="lbl_pwd" className={'login__label__pass'}>Пароль</label>
 
                             <input type="submit" value="Отправить" className={'login__submit__button'}/>
 

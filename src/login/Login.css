@@ -585,128 +585,119 @@
 
 @media screen and (min-width: 480px) and (max-width: 991.98px) {
 
+    * {
+        box-sizing: border-box;
+        color: #E1D3C1;
+    }
+
     body {
         font-family: Montserrat;
-        background: url("Background-mobile.png") no-repeat center;
+        background: url("Background-mobile-old.jpg") no-repeat;
         -webkit-background-size: cover;
         background-size: cover;
         min-height: 100vh;
     }
+
     .logotype {
         display: none;
     }
+
     .logotype-mobile {
         display: flex;
         text-align: center;
         width: 112px ;
         height: 88px;
-        margin: 4.5em auto 0 auto;
+        margin: 72px auto 0 auto;
     }
+
+    .login__form__title {
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 31.43px;
+        text-align: center;
+        margin-top: 143px;
+        margin-bottom: 30px;
+    }
+
     .login__form {
         font-family: Montserrat;
         position: relative;
-        margin-top: 30%;
-        width: auto;
+        width: 100%;
         display: flex;
         flex-direction: column;
         text-align: center;
+        margin-top: -34px;
         font-size: 18px;
         font-style: normal;
         font-weight: 200;
         line-height: 22px;
-    }
-
-    .login__form__title {
-        font-size: 1.8em;
-        font-style: normal;
-        font-weight: 200;
-        line-height: 41px;
-        text-align: center;
-        padding: 30px 0;
-        margin-top: -2.5em;
     }
 
     .login__form__input {
         font-family: Montserrat;
         width: 100%;
-        height: 3em;
+        height: 50px;
         color: #E1D3C1;
         font-style: normal;
         font-weight: 200;
         font-size: 18px;
-        padding-left: 0.5em;
         line-height: 22px;
-        background-color: inherit;
+        padding: 10px 0 0 10px;
+        background-color: #151514;
         border: none;
-        border-bottom: 2px solid #4F3F84;
-        margin-bottom: 30px;
+        border-bottom: 1.5px solid #4F3F84;
         outline: none;
     }
 
     .login__form__input:focus {
-        background-color: rgb(59, 57, 54);
+        background-color: #151514;
         border-bottom: 2px solid #E1D3C1;
     }
 
     .login__submit__button:focus {
-        background-color: #504D49;
+        background-color: #151514;
         border-color: rgba(34, 34, 34, 0.7);
     }
 
-    label {
+    .login__label__email {
         display: none;
+        background-color: #151514;
+        top: 198px;
+        position: absolute;
+        font-size: 12px;
+        text-align: left;
+        padding-left: 10px;
+        opacity: 0.6;
+        z-index: 999;
+    }
+
+    .login__label__pass {
+        display: none;
+        background-color: #151514;
+        top: 254px;
+        position: absolute;
+        font-size: 12px;
+        text-align: left;
+        padding-left: 10px;
+        opacity: 0.6;
+        z-index: 999;
+    }
+
+    .question-img {
+        position: absolute;
+        top: 266px;
+        right: 10px;
+        z-index: 999;
+    }
+    .question-img:hover {
+        cursor: pointer;
     }
 
     ::-webkit-input-placeholder {
         position: relative;
-        background-color: rgba(87, 85, 85, 0.7);
+        background-color: #151514;
         color: #E1D3C1;
-        padding: 30px 0;
-    }
-
-    ::-moz-placeholder {
-        background-color: rgba(87, 85, 85, 0.7);
-        color: #E1D3C1;
-    }
-
-    /* Firefox 19+ */
-    :-moz-placeholder {
-        background-color: rgba(87, 85, 85, 0.7);
-        color: #E1D3C1;
-    }
-
-    /* Firefox 18- */
-    :-ms-input-placeholder {
-        position: relative;
-        background-color: rgba(87, 85, 85, 0.7);
-        color: #E1D3C1;
-    }
-
-    :focus::-webkit-input-placeholder {
-        position: relative;
-        top: -20px;
-        font-size: 0.8em;
-        line-height: 3em;
-        background-color: rgba(87, 85, 85, 0.7);
-    }
-
-    :focus::-moz-placeholder {
-        height: 85px;
-        font-size: 0.8em;
-        line-height: 1;
-        background-color: rgba(87, 85, 85, 0.7);
-    }
-
-    :focus:-moz-placeholder {
-        font-size: 0.8em;
-        line-height: 1;
-        background-color: rgba(87, 85, 85, 0.7);
-    }
-
-    :focus:-ms-input-placeholder {
-        font-size: 0.8em;
-        line-height: 1;
-        background-color: rgba(87, 85, 85, 0.7);
     }
 
     .login__submit__button, button {
@@ -714,11 +705,9 @@
         font-weight: 300;
         font-size: 18px;
         line-height: 22px;
-        width: 72vw;
-        max-width: 50vw;
+        width: 300px;
         height: 72px;
-        margin: 0 auto;
-        margin-bottom: 32px;
+        margin: 30px auto 206px auto;
         background-color: #4F3F84;
         border-color: #4F3F84;
         border-radius: 15px;
@@ -742,15 +731,12 @@
         font-family: Montserrat;
         display: flex;
         flex-direction: column;
-        bottom: 10px;
-        position: fixed;
+
         left: calc(50% - 5em / 2);
     }
     .login__register {
-
         text-decoration: none;
-
-
+        padding-bottom: 10px;
     }
     .login__register:hover {
         cursor: none;
@@ -759,136 +745,125 @@
         display: none;
     }
     .arr-reg {
-
     }
-
 } /*end media 480 - 767 */
 
 
 @media screen and (min-width: 220px) and (max-width: 479.98px) {
 
+    * {
+        box-sizing: border-box;
+        color: #E1D3C1;
+    }
+
     body {
         font-family: Montserrat;
-        background: url("Background-mobile.png") no-repeat center;
+        background: url("Background-mobile-old.jpg") no-repeat;
         -webkit-background-size: cover;
         background-size: cover;
         min-height: 100vh;
     }
+
     .logotype {
         display: none;
     }
+
     .logotype-mobile {
         display: flex;
         text-align: center;
         width: 112px ;
         height: 88px;
-        margin: 4.5em auto 0 auto;
+        margin: 72px auto 0 auto;
     }
+
+    .login__form__title {
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 200;
+        line-height: 31.43px;
+        text-align: center;
+        margin-top: 143px;
+        margin-bottom: 30px;
+    }
+
     .login__form {
         font-family: Montserrat;
         position: relative;
-        margin-top: 30%;
-        width: auto;
+        width: 100%;
         display: flex;
         flex-direction: column;
         text-align: center;
+        margin-top: -34px;
         font-size: 18px;
         font-style: normal;
         font-weight: 200;
         line-height: 22px;
-    }
-
-    .login__form__title {
-        font-size: 1.4em;
-        font-style: normal;
-        font-weight: 200;
-        line-height: 41px;
-        text-align: center;
-        padding: 30px 0;
-        margin-top: -1.5em;
-    }
+ }
 
     .login__form__input {
         font-family: Montserrat;
         width: 100%;
-        height: 3em;
+        height: 50px;
         color: #E1D3C1;
         font-style: normal;
         font-weight: 200;
         font-size: 18px;
-        padding-left: 0.5em;
         line-height: 22px;
-        background-color: inherit;
+        padding: 10px 0 0 10px;
+        background-color: #151514;
         border: none;
-        border-bottom: 2px solid #4F3F84;
-        margin-bottom: 30px;
+        border-bottom: 1.5px solid #4F3F84;
         outline: none;
     }
 
     .login__form__input:focus {
-        background-color: inherit;
+        background-color: #151514;
         border-bottom: 2px solid #E1D3C1;
     }
 
     .login__submit__button:focus {
-        background-color: #504D49;
+        background-color: #151514;
         border-color: rgba(34, 34, 34, 0.7);
     }
 
-    label {
+    .login__label__email {
         display: none;
+        background-color: #151514;
+        top: 198px;
+        position: absolute;
+        font-size: 12px;
+        text-align: left;
+        padding-left: 10px;
+        opacity: 0.6;
+        z-index: 999;
+    }
+
+    .login__label__pass {
+        display: none;
+        background-color: #151514;
+        top: 254px;
+        position: absolute;
+        font-size: 12px;
+        text-align: left;
+        padding-left: 10px;
+        opacity: 0.6;
+        z-index: 999;
+    }
+
+    .question-img {
+        position: absolute;
+        top: 266px;
+        right: 10px;
+        z-index: 999;
+    }
+    .question-img:hover {
+        cursor: pointer;
     }
 
     ::-webkit-input-placeholder {
         position: relative;
-        background-color: rgba(87, 85, 85, 0.7);
+        background-color: #151514;
         color: #E1D3C1;
-        padding: 30px 0;
-    }
-
-    ::-moz-placeholder {
-        background-color: rgba(87, 85, 85, 0.7);
-        color: #E1D3C1;
-    }
-
-    /* Firefox 19+ */
-    :-moz-placeholder {
-        background-color: rgba(87, 85, 85, 0.7);
-        color: #E1D3C1;
-    }
-
-    /* Firefox 18- */
-    :-ms-input-placeholder {
-        position: relative;
-        background-color: rgba(87, 85, 85, 0.7);
-        color: #E1D3C1;
-    }
-
-    :focus::-webkit-input-placeholder {
-        position: relative;
-        top: -20px;
-        font-size: 0.8em;
-        line-height: 3em;
-        background-color: rgba(87, 85, 85, 0.7);
-    }
-
-    :focus::-moz-placeholder {
-        height: 85px;
-        font-size: 0.8em;
-        line-height: 1;
-        background-color: rgba(87, 85, 85, 0.7);
-    }
-
-    :focus:-moz-placeholder {
-        font-size: 0.8em;
-        line-height: 1;
-        background-color: rgba(87, 85, 85, 0.7);
-    }
-
-    :focus:-ms-input-placeholder {
-        font-size: 0.8em;
-        line-height: 1;
-        background-color: rgba(87, 85, 85, 0.7);
     }
 
     .login__submit__button, button {
@@ -896,10 +871,9 @@
         font-weight: 300;
         font-size: 18px;
         line-height: 22px;
-        width: 72vw;
+        width: 300px;
         height: 72px;
-        margin: 0 auto;
-        margin-bottom: 32px;
+        margin: 30px auto 206px auto;
         background-color: #4F3F84;
         border-color: #4F3F84;
         border-radius: 15px;
@@ -923,15 +897,12 @@
         font-family: Montserrat;
         display: flex;
         flex-direction: column;
-        bottom: 10px;
-        position: fixed;
+
         left: calc(50% - 5em / 2);
     }
     .login__register {
-
         text-decoration: none;
-
-
+        padding-bottom: 10px;
     }
     .login__register:hover {
         cursor: none;
@@ -940,8 +911,6 @@
         display: none;
     }
     .arr-reg {
-
     }
 
-} /*end media 320 - 479 */
-
+} /*end media 220 - 479 */

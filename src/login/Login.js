@@ -252,7 +252,7 @@ class Login extends React.Component {
 
                             <img className={'question-img'} src= {questionimg} width="25" height="25" alt=''/>
 
-                            <input type="submit" value="Отправить" className={'login__submit__button'}/>
+                            <input type="submit" value="Войти" className={'login__submit__button'}/>
 
                             <div className={'login__questions'}>
                                 <div className={'login__no-login'}>Нет аккаунта?</div>

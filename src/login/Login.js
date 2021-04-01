@@ -157,7 +157,6 @@ class Login extends React.Component {
     }
 
 
-
     onChangePwd(e) {
     const val = e.target.value;
     this.setState({password: val});
@@ -224,7 +223,9 @@ class Login extends React.Component {
                if (!this.state.btken) {
                     return (
                         <div>
-                            
+
+
+                           <div className={'bg'}> </div>
 
                            <img className={'logotype'} src= {logo} alt=''/>
 
@@ -254,6 +255,9 @@ class Login extends React.Component {
 
                             <input type="submit" value="Войти" className={'login__submit__button'}/>
 
+
+                        </form>
+
                             <div className={'login__questions'}>
                                 <div className={'login__no-login'}>Нет аккаунта?</div>
                                 <div className={'login__register'}>Регистрация</div>
@@ -263,7 +267,7 @@ class Login extends React.Component {
 
                             </div>
 
-                        </form>
+
                </div>
 
                     );

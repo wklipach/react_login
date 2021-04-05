@@ -13,11 +13,15 @@
     * {
         box-sizing: border-box;
         color: #E1D3C1;
-
-
     }
     a, a:visited, a:focus, a:active, a:hover, input,select, textarea, button{
         outline: none !important;}
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: #E1D3C1;
+        -webkit-box-shadow: inset 0 0 0 50px #2a2a29 !important;
+    }
+
 
     body {
         color: #E1D3C1;
@@ -90,7 +94,11 @@
         opacity: 1;
         z-index: 9;
     }
-
+    input:-webkit-autofill {
+        -webkit-text-fill-color: #E1D3C1;
+        -webkit-text-size-adjust: none;
+        -webkit-box-shadow: inset 0 0 0 50px #2a2a29 !important;
+    }
     .login__label__email {
         display: none;
         background-color: #2a2a29;
@@ -142,24 +150,20 @@
         margin: 0 auto;
         margin-bottom: 30px;
         background-color: #4F3F84;
-        border-color: #4F3F84;
+        border: none;
         border-radius: 15px;
         color: inherit;
         cursor: pointer;
-
     }
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: rgba(34, 34, 34, 0.7);
     }
     .login__submit__button:hover {
         background-color: #5C34FA;
-        border: #5C34FA;
     }
 
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: #504D49;
     }
 
     .login__questions {
@@ -342,24 +346,20 @@
         margin: 0 auto;
         margin-bottom: 30px;
         background-color: #4F3F84;
-        border-color: #4F3F84;
+        border: none;
         border-radius: 15px;
         color: inherit;
         cursor: pointer;
-
     }
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: rgba(34, 34, 34, 0.7);
     }
     .login__submit__button:hover {
         background-color: #5C34FA;
-        border: #5C34FA;
     }
 
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: #504D49;
     }
 
     .login__questions {
@@ -541,7 +541,7 @@
         margin: 0 auto;
         margin-bottom: 30px;
         background-color: #4F3F84;
-        border-color: #4F3F84;
+        border: none;
         border-radius: 15px;
         color: inherit;
         cursor: pointer;
@@ -549,16 +549,13 @@
     }
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: rgba(34, 34, 34, 0.7);
     }
     .login__submit__button:hover {
         background-color: #5C34FA;
-        border: #5C34FA;
     }
 
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: #504D49;
     }
 
     .login__questions {
@@ -745,7 +742,7 @@
         height: 72px;
         margin: 30px auto;
         background-color: #4F3F84;
-        border-color: #4F3F84;
+        border: none;
         border-radius: 15px;
         color: inherit;
         cursor: pointer;
@@ -758,12 +755,10 @@
 
     .login__submit__button:hover {
         background-color: #5C34FA;
-        border: #5C34FA;
     }
 
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: #504D49;
     }
 
     .login__questions {
@@ -927,7 +922,7 @@
         height: 72px;
         margin: 30px auto;
         background-color: #4F3F84;
-        border-color: #4F3F84;
+        border: none;
         border-radius: 15px;
         color: inherit;
         cursor: pointer;
@@ -939,11 +934,9 @@
     }
     .login__submit__button:hover {
         background-color: #5C34FA;
-        border: #5C34FA;
     }
     .login__submit__button:focus {
         background-color: #504D49;
-        border-color: #504D49;
     }
     .login__questions {
         font-family: Montserrat;
